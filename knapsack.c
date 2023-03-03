@@ -121,7 +121,7 @@ void knapsack(int n)
 	int max=n;
 	int count=0;
 	int count1=0;
-	while(current->next!=NULL)
+	while(current!=NULL)
 	{
 		count1=count1+current->weight;
 		if(count1 < max)
@@ -135,10 +135,6 @@ void knapsack(int n)
 		     {
 			temp=max-count;
 
-			printf("max %d",max);
-
-			printf("count %d",count);
-
 			printf(" %f",current->value);
 			profit= profit +(temp*current->value)/current->weight+0.0 ;
 			c1++;
@@ -147,9 +143,7 @@ void knapsack(int n)
 		current=current->next;
 	}
 
-	printf(" %d",count);
-	printf(" %d",temp);
-
+	
 	printf(" %f",profit);
 }
 
